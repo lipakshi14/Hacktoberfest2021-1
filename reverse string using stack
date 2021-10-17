@@ -1,0 +1,32 @@
+#include<string.h>
+#include<stdio.h>
+#include<conio.h>
+#include<malloc.h>
+#define Max 10
+int top=-1,i,l;
+char stack[Max];
+ push(char);
+ char pop();
+
+void main(){
+  char str[10];
+  printf("enter the word\n");
+  gets(str);
+  l=strlen(str);
+  for(i=0;i<l;i++){
+    push(str[i]);
+  }
+  for(i=0;i<l;i++)
+  str[i]=pop();
+  printf("revese string is : ");
+  puts(str);
+}
+
+ push(char item){
+        top++;
+        stack[top]=item;
+}
+
+char pop(){
+    return(stack[top--]);
+}
